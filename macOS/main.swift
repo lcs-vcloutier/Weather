@@ -9,10 +9,7 @@ import Foundation
 
 
 // Make an instance of the view model (to store questions and advice)
-//var advisor = WeatherViewModel()
-
-// Generate a weather prediction
-let prediction = WeatherPredictionGenerator.getPrediction()
+var advisor = WeatherViewModel()
 
 // Program name
 print("WEATHER APP")
@@ -21,18 +18,14 @@ print("============")
 
 // Loop until user chooses to quit
 while true {
+    // Generate a weather prediction
+    let prediction = WeatherPredictionGenerator.getPrediction()
     
-    // Ask for user's question
-    print("Enter Query Here:")
-    
-    // Get input as a non-optional String
-    let input = readLine()!
-    print("")
-
     // Show the prediction
     print("Current conditions are \(prediction.condition.description.lowercased()) with a temperature of \(String(format: "%.1f", arguments: [prediction.temperature])) °C.")
-
+    
     print("That's \(prediction.feel.lowercased())!")
+    
     
     // Ask whether the user wants to continue or see history of advice
     while true {
@@ -45,11 +38,11 @@ while true {
             print("")
             print("History")
             print("-------")
-//            for session in advisor.sessions {
-//                print(session.question)
-//                print(session.response)
-//                print("")
-//            }
+            //            for session in advisor.sessions {
+            //                print(session.question)
+            //                print(session.response)
+            //                print("")
+            //            }
             break
             
         } else if selection == "N" {
@@ -67,6 +60,4 @@ while true {
             exit(0)
         }
     }
-    
-    
 }
