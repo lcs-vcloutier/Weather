@@ -13,14 +13,13 @@ class WeatherViewModel: ObservableObject {
     // History of advice sessions
     @Published var predictions: [Prediction] = []    // empty array to start
     
-    // Given a question, provide some advice
-    // Library shortcut: Command-Shift-L
+    // Get a prediction and save that prediction
     func provideWeatherPrediction() -> Prediction  {
         
-        // Use the static function right from the Magic8Ball type (no instance required!)
-        var currentPrediction = WeatherPredictionGenerator.getPrediction()
+        // Use the static function right from the WeatherPredictionGenerator type (no instance required!)
+        let currentPrediction = WeatherPredictionGenerator.getPrediction()
 
-        // Save the question and the advice given to the history
+        // Save the prediction to the history
         predictions.append(currentPrediction)
         
         // Give the response back

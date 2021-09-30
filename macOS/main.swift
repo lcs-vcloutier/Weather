@@ -18,10 +18,9 @@ print("============")
 // Loop until user chooses to quit
 while true {
  
-    // Show the prediction
+    // Call the WeatherViewModel to get a new prediction and save it
     let prediction = advisor.provideWeatherPrediction()
 
-    
     // Show the prediction
     print("Current conditions are \(prediction.condition.description.lowercased()) with a temperature of \(String(format: "%.1f", arguments: [prediction.temperature])) °C.")
 
@@ -35,7 +34,7 @@ while true {
         let selection = readLine()!
         if selection == "Y" {
             
-            // Show history
+            // Show history by looping through past predictions
             print("")
             print("History")
             print("-------")
