@@ -8,7 +8,7 @@
 import Foundation
 
 
-// Make an instance of the view model (to store questions and advice)
+// Make an instance of the view model (to store weather predictions)
 var advisor = WeatherViewModel()
 
 // Program name

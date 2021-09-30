@@ -10,7 +10,7 @@ import SwiftUI
 
 class WeatherViewModel: ObservableObject {
     
-    // History of advice sessions
+    // History of weather predictions
     @Published var predictions: [Prediction] = []    // empty array to start
     
     // Get a prediction and save that prediction
