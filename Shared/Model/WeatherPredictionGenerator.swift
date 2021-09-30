@@ -84,9 +84,7 @@ struct WeatherPredictionGenerator {
         
         // Return the weather prediction
         return prediction
-        
-        // TODO: Implement more appropriate logic above so that the same prediction is not always returned
-        
+                
     }
     
 }

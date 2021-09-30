@@ -15,13 +15,16 @@ class WeatherViewModel: ObservableObject {
     
     // Given a question, provide some advice
     // Library shortcut: Command-Shift-L
-    func provideWeatherPrediction()  {
+    func provideWeatherPrediction() -> Prediction  {
         
-        //Create
+        // Use the static function right from the Magic8Ball type (no instance required!)
+        var currentPrediction = WeatherPredictionGenerator.getPrediction()
+
+        // Save the question and the advice given to the history
+        predictions.append(currentPrediction)
         
-        //Save
-        //Print
+        // Give the response back
+        return currentPrediction
         
     }
-    
 }

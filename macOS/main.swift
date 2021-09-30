@@ -15,22 +15,23 @@ var advisor = WeatherViewModel()
 print("WEATHER APP")
 print("============")
 
-
 // Loop until user chooses to quit
 while true {
-    // Generate a weather prediction
-    let prediction = WeatherPredictionGenerator.getPrediction()
+ 
+    // Show the prediction
+    let prediction = advisor.provideWeatherPrediction()
+
     
     // Show the prediction
     print("Current conditions are \(prediction.condition.description.lowercased()) with a temperature of \(String(format: "%.1f", arguments: [prediction.temperature])) °C.")
-    
+
     print("That's \(prediction.feel.lowercased())!")
     
     
     // Ask whether the user wants to continue or see history of advice
     while true {
         print("")
-        print("See history of advice given? (Y/N)")
+        print("See history of weather predictions given? (Y/N)")
         let selection = readLine()!
         if selection == "Y" {
             
@@ -38,11 +39,12 @@ while true {
             print("")
             print("History")
             print("-------")
-            //            for session in advisor.sessions {
-            //                print(session.question)
-            //                print(session.response)
-            //                print("")
-            //            }
+                        for prediction in advisor.predictions {
+                            print("Current conditions are \(prediction.condition.description.lowercased()) with a temperature of \(String(format: "%.1f", arguments: [prediction.temperature])) °C.")
+
+                            print("That's \(prediction.feel.lowercased())!")
+                            print("")
+                        }
             break
             
         } else if selection == "N" {
@@ -52,7 +54,7 @@ while true {
     
     // Ask whether the user wants to see more advice
     while true {
-        print("More advice? (Y/N)")
+        print("More weather predictions? (Y/N)")
         let selection = readLine()!
         if selection == "Y" {
             break
@@ -61,3 +63,4 @@ while true {
         }
     }
 }
+
