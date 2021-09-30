@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0E82BBCB2705C63A00BD6434 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBCA2705C63A00BD6434 /* main.swift */; };
+		0E82BBD62705C6CF00BD6434 /* CelsiusTemperatureRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBD52705C6CF00BD6434 /* CelsiusTemperatureRange.swift */; };
+		0E82BBD82705C87F00BD6434 /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBD72705C87F00BD6434 /* Prediction.swift */; };
+		0E82BBDA2705CC7500BD6434 /* WeatherPredictionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBD92705CC7500BD6434 /* WeatherPredictionGenerator.swift */; };
+		0E82BBDC2705CCC400BD6434 /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBDB2705CCC400BD6434 /* WeatherCondition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,10 @@
 /* Begin PBXFileReference section */
 		0E82BBC72705C63A00BD6434 /* Weather */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Weather; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E82BBCA2705C63A00BD6434 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		0E82BBD52705C6CF00BD6434 /* CelsiusTemperatureRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelsiusTemperatureRange.swift; sourceTree = "<group>"; };
+		0E82BBD72705C87F00BD6434 /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
+		0E82BBD92705CC7500BD6434 /* WeatherPredictionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPredictionGenerator.swift; sourceTree = "<group>"; };
+		0E82BBDB2705CCC400BD6434 /* WeatherCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +49,8 @@
 		0E82BBBE2705C63A00BD6434 = {
 			isa = PBXGroup;
 			children = (
-				0E82BBC92705C63A00BD6434 /* Weather */,
+				0E82BBD12705C64900BD6434 /* Shared */,
+				0E82BBC92705C63A00BD6434 /* macOS */,
 				0E82BBC82705C63A00BD6434 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +63,39 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0E82BBC92705C63A00BD6434 /* Weather */ = {
+		0E82BBC92705C63A00BD6434 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
 				0E82BBCA2705C63A00BD6434 /* main.swift */,
 			);
-			path = Weather;
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		0E82BBD12705C64900BD6434 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0E82BBD22705C65000BD6434 /* Model */,
+				0E82BBD32705C65800BD6434 /* ViewModels */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		0E82BBD22705C65000BD6434 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E82BBD52705C6CF00BD6434 /* CelsiusTemperatureRange.swift */,
+				0E82BBD72705C87F00BD6434 /* Prediction.swift */,
+				0E82BBDB2705CCC400BD6434 /* WeatherCondition.swift */,
+				0E82BBD92705CC7500BD6434 /* WeatherPredictionGenerator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E82BBD32705C65800BD6434 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +156,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E82BBDA2705CC7500BD6434 /* WeatherPredictionGenerator.swift in Sources */,
+				0E82BBD62705C6CF00BD6434 /* CelsiusTemperatureRange.swift in Sources */,
+				0E82BBDC2705CCC400BD6434 /* WeatherCondition.swift in Sources */,
 				0E82BBCB2705C63A00BD6434 /* main.swift in Sources */,
+				0E82BBD82705C87F00BD6434 /* Prediction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
