@@ -16,7 +16,7 @@ class WeatherViewModel: ObservableObject {
     // Get a prediction and save that prediction
     func provideWeatherPrediction() -> Prediction  {
         
-        // Use the static function right from the WeatherPredictionGenerator type (no instance required!)
+        // Create the prediction using WeatherPredictionGenerator's static func
         let currentPrediction = WeatherPredictionGenerator.getPrediction()
 
         // Save the prediction to the history
