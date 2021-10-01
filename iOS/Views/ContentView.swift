@@ -10,20 +10,44 @@ import SwiftUI
 
 struct ContentView: View {
     // Look at source of truth in iOSApp.swift
-        @ObservedObject var advisor: WeatherViewModel
+    @ObservedObject var advisor: WeatherViewModel
+    
+    @State var currentPrediction = Prediction(temperature: 0.0, feel: "", condition:  WeatherCondition(description: "Sunny/Clear", imageName: "sun.max.fill"))
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("28 Celsius")
-                .font(.title)
-            HStack {
-            Text("Condition")
-                .font(.title2)
+        VStack (alignment: .leading) {
+            GroupBox(
+                label: Label("\(String(format: "%.1f", arguments: [currentPrediction.temperature])) °C", systemImage: "\(currentPrediction.condition.imageName)")
+                    .foregroundColor(.blue)
+            ) {
+                Text("Current conditions are \(currentPrediction.condition.description.lowercased()). That's \(currentPrediction.feel.lowercased())!")
+                    .font(.title)
             }
-            Text("Feel")
-                .font(.title2)
+            .padding()
+            
+            
+            
+            Button(action: {
+                //Debug
+                print("Button was pressed")
+                // Call function from WeatherViewModel to get new prediction
+                currentPrediction = advisor.provideWeatherPrediction()
+                
+            }, label: {
+                Text("New Forecast")
+                    .padding()
+                    .foregroundColor(.blue)
+                    .font(.title)
+                    .background(.regularMaterial)
+                    .cornerRadius(10)
+            })
+                .padding()
+            Spacer()
         }
-        .padding()
+        .navigationTitle("Weather")
+        .onAppear {
+            currentPrediction = advisor.provideWeatherPrediction()
+        }
     }
 }
 
