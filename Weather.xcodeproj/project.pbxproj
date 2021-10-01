@@ -13,6 +13,12 @@
 		0E82BBDA2705CC7500BD6434 /* WeatherPredictionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBD92705CC7500BD6434 /* WeatherPredictionGenerator.swift */; };
 		0E82BBDC2705CCC400BD6434 /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBDB2705CCC400BD6434 /* WeatherCondition.swift */; };
 		0E82BBE02705D8E300BD6434 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBDF2705D8E300BD6434 /* WeatherViewModel.swift */; };
+		2A9B3D2427076A56001C56EC /* CelsiusTemperatureRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBD52705C6CF00BD6434 /* CelsiusTemperatureRange.swift */; };
+		2A9B3D2527076A56001C56EC /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBD72705C87F00BD6434 /* Prediction.swift */; };
+		2A9B3D2627076A56001C56EC /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBDB2705CCC400BD6434 /* WeatherCondition.swift */; };
+		2A9B3D2727076A56001C56EC /* WeatherPredictionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBD92705CC7500BD6434 /* WeatherPredictionGenerator.swift */; };
+		2A9B3D2827076A56001C56EC /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBDF2705D8E300BD6434 /* WeatherViewModel.swift */; };
+		2A9B3D2A27076ACC001C56EC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B3D2927076ACC001C56EC /* HistoryView.swift */; };
 		56E5E92527075FDF000D28FC /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5E92427075FDF000D28FC /* iOSApp.swift */; };
 		56E5E92727075FDF000D28FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5E92627075FDF000D28FC /* ContentView.swift */; };
 		56E5E92927075FFC000D28FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56E5E92827075FFC000D28FC /* Assets.xcassets */; };
@@ -39,6 +45,7 @@
 		0E82BBD92705CC7500BD6434 /* WeatherPredictionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPredictionGenerator.swift; sourceTree = "<group>"; };
 		0E82BBDB2705CCC400BD6434 /* WeatherCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
 		0E82BBDF2705D8E300BD6434 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		2A9B3D2927076ACC001C56EC /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		56E5E92227075FDE000D28FC /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E5E92427075FDF000D28FC /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		56E5E92627075FDF000D28FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				56E5E92627075FDF000D28FC /* ContentView.swift */,
+				2A9B3D2927076ACC001C56EC /* HistoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,6 +258,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9B3D2427076A56001C56EC /* CelsiusTemperatureRange.swift in Sources */,
+				2A9B3D2A27076ACC001C56EC /* HistoryView.swift in Sources */,
+				2A9B3D2527076A56001C56EC /* Prediction.swift in Sources */,
+				2A9B3D2627076A56001C56EC /* WeatherCondition.swift in Sources */,
+				2A9B3D2727076A56001C56EC /* WeatherPredictionGenerator.swift in Sources */,
+				2A9B3D2827076A56001C56EC /* WeatherViewModel.swift in Sources */,
 				56E5E92727075FDF000D28FC /* ContentView.swift in Sources */,
 				56E5E92527075FDF000D28FC /* iOSApp.swift in Sources */,
 			);
@@ -403,7 +417,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 4R6S38RB8Z;
+				DEVELOPMENT_TEAM = GR8H7BN82Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -417,7 +431,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ca.sofiaandrade.iOS;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.vincentcloutier.iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -434,7 +448,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 4R6S38RB8Z;
+				DEVELOPMENT_TEAM = GR8H7BN82Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -448,7 +462,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ca.sofiaandrade.iOS;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.vincentcloutier.iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
