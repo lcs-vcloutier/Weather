@@ -7,14 +7,17 @@
 
 import Foundation
 
-struct Prediction {
+struct Prediction: Identifiable {
+    
+    // Unique ID for each session
+    let id = UUID()
     
     // The precise temperature for a given prediction
     let temperature: Double
-
+    
     // A description of how the temperature feels
     let feel: String
-
+    
     // A description of the overall weather conditions for this prediction (sunny, rainy, et cetera)
     let condition: WeatherCondition
     
