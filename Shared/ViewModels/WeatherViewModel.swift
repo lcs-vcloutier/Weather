@@ -10,13 +10,13 @@ import SwiftUI
 
 class WeatherViewModel: ObservableObject {
     
-    // History of weather predictions
-    @Published var predictions: [Prediction] = []    // empty array to start
+    // Creating an empty array to store history of weather predictions
+    @Published var predictions: [Prediction] = []
     
     // Get a prediction and save that prediction
     func provideWeatherPrediction() -> Prediction  {
         
-        // Use the static function right from the WeatherPredictionGenerator type (no instance required!)
+        // Create the prediction using WeatherPredictionGenerator's static func
         let currentPrediction = WeatherPredictionGenerator.getPrediction()
 
         // Save the prediction to the history
