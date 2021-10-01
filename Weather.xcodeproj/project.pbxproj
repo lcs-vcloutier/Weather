@@ -123,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				56E5E92427075FDF000D28FC /* iOSApp.swift */,
-				56E5E92627075FDF000D28FC /* ContentView.swift */,
+				56E5E93027076043000D28FC /* Views */,
 				56E5E92827075FFC000D28FC /* Assets.xcassets */,
 				56E5E92A27075FFC000D28FC /* Preview Content */,
 			);
@@ -136,6 +136,14 @@
 				56E5E92B27075FFC000D28FC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		56E5E93027076043000D28FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56E5E92627075FDF000D28FC /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
