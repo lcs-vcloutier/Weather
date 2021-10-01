@@ -12,6 +12,6 @@ struct WeatherCondition {
     // A description of the weather condition
     let description: String
     
-    // TODO: Add a property that includes an SF Symbols image name that matches the condition
-    
+    // A SF Symbols image name to match condition
+    let imageName: String    
 }

@@ -49,19 +49,17 @@ struct WeatherPredictionGenerator {
     
     // Create an array of possible weather conditions
     static private let weatherConditions: [WeatherCondition] = [
-        WeatherCondition(description: "Sunny/Clear"),
-        WeatherCondition(description: "Partially cloudy"),
-        WeatherCondition(description: "Cloudy"),
-        WeatherCondition(description: "Overcast"),
-        WeatherCondition(description: "Rain"),
-        WeatherCondition(description: "Drizzle"),
-        WeatherCondition(description: "Snow"),
-        WeatherCondition(description: "Stormy"),
-        WeatherCondition(description: "Tornadoes"),
-        WeatherCondition(description: "Thundersnows"),
-        WeatherCondition(description: "Fog"),
-        WeatherCondition(description: "Hurricanes"),
-        WeatherCondition(description: "Sandstorms"),
+        WeatherCondition(description: "Sunny/Clear", imageName: "sun.max.fill"),
+        WeatherCondition(description: "Partially cloudy", imageName: "cloud.sun.fill"),
+        WeatherCondition(description: "Cloudy", imageName: "cloud.fill"),
+        WeatherCondition(description: "Fog", imageName: "cloud.fog.fill"),
+        WeatherCondition(description: "Drizzle", imageName: "cloud.drizzle.fill"),
+        WeatherCondition(description: "Rain", imageName: "cloud.rain.fill"),
+        WeatherCondition(description: "Stormy", imageName: "cloud.heavyrain.fill"),
+        WeatherCondition(description: "Snow", imageName: "cloud.snow.fill"),
+        WeatherCondition(description: "Hurricanes", imageName: "hurricane"),
+        WeatherCondition(description: "Tornadoes", imageName: "tornado"),
+        WeatherCondition(description: "Sandstorms", imageName: "sun.dust.fill"),
     ]
     
     // Provides a random weather prediction
