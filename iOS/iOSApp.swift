@@ -20,8 +20,8 @@ struct iOSApp: App {
                     ContentView(advisor: advisor)
                 }
                 .tabItem {
-                    Image(systemName: "questionmark.circle.fill")
-                    Text ("Ask")
+                    Image(systemName: "thermometer")
+                    Text ("Weather")
                     
                 }
                 
