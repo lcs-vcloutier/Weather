@@ -16,7 +16,7 @@ struct ContentView: View {
     @State var currentPrediction = Prediction(temperature: 0.0, feel: "", condition:  WeatherCondition(description: "Sunny/Clear", imageName: "sun.max.fill"))
     
     var body: some View {
-        VStack (alignment: .leading) {
+        VStack {
             
             // Show forecast to user
             GroupBox(
