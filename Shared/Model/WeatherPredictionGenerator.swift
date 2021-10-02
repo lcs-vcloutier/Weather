@@ -47,20 +47,28 @@ struct WeatherPredictionGenerator {
         
     ]
     
-    // Create an array of possible weather conditions
-    static private let weatherConditions: [WeatherCondition] = [
+    // Create an array of possible cold weather conditions (when temp is below 0)
+    static private let coldWeatherConditions: [WeatherCondition] = [
+        WeatherCondition(description: "Snowy", imageName: "cloud.snow.fill"),
         WeatherCondition(description: "Sunny", imageName: "sun.max.fill"),
         WeatherCondition(description: "Partially cloudy", imageName: "cloud.sun.fill"),
         WeatherCondition(description: "Cloudy", imageName: "cloud.fill"),
+    ]
+    
+    // Create an array of possible warm weather conditions (when temp is above 0)
+    static private let warmWeatherConditions: [WeatherCondition] = [
         WeatherCondition(description: "Foggy", imageName: "cloud.fog.fill"),
         WeatherCondition(description: "Drizzling", imageName: "cloud.drizzle.fill"),
         WeatherCondition(description: "Rainy", imageName: "cloud.rain.fill"),
         WeatherCondition(description: "Stormy", imageName: "cloud.heavyrain.fill"),
-        WeatherCondition(description: "Snowy", imageName: "cloud.snow.fill"),
         WeatherCondition(description: "Hurricanes", imageName: "hurricane"),
         WeatherCondition(description: "Tornadoes", imageName: "tornado"),
         WeatherCondition(description: "Sandstorms", imageName: "sun.dust.fill"),
+        WeatherCondition(description: "Sunny", imageName: "sun.max.fill"),
+        WeatherCondition(description: "Partially cloudy", imageName: "cloud.sun.fill"),
+        WeatherCondition(description: "Cloudy", imageName: "cloud.fill"),
     ]
+    
     
     // Provides a random weather prediction
     static func getPrediction() -> Prediction {
@@ -68,12 +76,22 @@ struct WeatherPredictionGenerator {
         // Get a possible temperature range
         let temperatureRange = temperatureRanges.randomElement()!
         
+        // Get feel from temp range
+        let feel = temperatureRange.feel
+        
         // Now get an exact temperature from that range
         let temperature = Double.random(in: temperatureRange.bounds)
-        let feel = temperatureRange.feel
 
-        // Get a weather condition
-        let condition = weatherConditions.randomElement()!
+        // Initialize condition variable
+        var condition = warmWeatherConditions.randomElement()!
+
+        // If temp is below 0.0 use cold weather conditions, if above use warm weather conditions
+        if temperature < 0.0 {
+            condition = coldWeatherConditions.randomElement()!
+        }
+        else {
+            condition = warmWeatherConditions.randomElement()!
+        }
         
         // Make the prediction
         let prediction = Prediction(temperature: temperature,
