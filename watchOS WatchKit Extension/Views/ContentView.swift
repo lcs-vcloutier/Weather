@@ -20,15 +20,10 @@ struct ContentView: View {
             
             // Check if history of predictions is empty - in case onAppear fails
             if advisor.predictions.isEmpty == false {
-                // Show forecast to user
-
-                VStack {
-                    Text ("\(String(format: "%.1f", arguments: [currentPrediction.temperature])) °C")
-                    HStack {
-                        Text("\(currentPrediction.condition.description)")
-                        Image ("\(currentPrediction.condition.imageName)")
-                    }
-                }
+                
+                // Show forecasted temperature to user
+                Text ("\(String(format: "%.1f", arguments: [currentPrediction.temperature])) °C")
+                    .font(.title)
                 
             }
             

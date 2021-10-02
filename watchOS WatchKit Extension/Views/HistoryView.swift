@@ -15,12 +15,11 @@ struct HistoryView: View {
     var body: some View {
         // Show the list of questions and responses
         List(advisor.predictions.reversed()) { prediction in
-            // Show forecast to user
-            Text("Current conditions are \(prediction.condition.description.lowercased()). That's \(prediction.feel.lowercased())!")
-        Text ("\(String(format: "%.1f", arguments: [prediction.temperature])) °C")
-            Image ("\(prediction.condition.imageName)")
+            // Show forecasted temperature to user
+            Text ("\(String(format: "%.1f", arguments: [currentPrediction.temperature])) °C")
+                .font(.title)
         }
         .navigationTitle("History")
-
-        }
+        
     }
+}

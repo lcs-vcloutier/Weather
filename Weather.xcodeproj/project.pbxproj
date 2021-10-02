@@ -23,9 +23,6 @@
 		2A1E62552708A81D00470E2F /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E62542708A81D00470E2F /* ComplicationController.swift */; };
 		2A1E62572708A82000470E2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A1E62562708A82000470E2F /* Assets.xcassets */; };
 		2A1E625A2708A82000470E2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A1E62592708A82000470E2F /* Preview Assets.xcassets */; };
-		2A1E62662708A82000470E2F /* watchOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E62652708A82000470E2F /* watchOSTests.swift */; };
-		2A1E62702708A82000470E2F /* watchOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E626F2708A82000470E2F /* watchOSUITests.swift */; };
-		2A1E62722708A82000470E2F /* watchOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E62712708A82000470E2F /* watchOSUITestsLaunchTests.swift */; };
 		2A1E62842708A85300470E2F /* CelsiusTemperatureRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBD52705C6CF00BD6434 /* CelsiusTemperatureRange.swift */; };
 		2A1E62852708A85300470E2F /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBD72705C87F00BD6434 /* Prediction.swift */; };
 		2A1E62862708A85300470E2F /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBDB2705CCC400BD6434 /* WeatherCondition.swift */; };
@@ -131,10 +128,7 @@
 		2A1E625B2708A82000470E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A1E625C2708A82000470E2F /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		2A1E62612708A82000470E2F /* watchOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = watchOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A1E62652708A82000470E2F /* watchOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watchOSTests.swift; sourceTree = "<group>"; };
 		2A1E626B2708A82000470E2F /* watchOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = watchOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A1E626F2708A82000470E2F /* watchOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watchOSUITests.swift; sourceTree = "<group>"; };
-		2A1E62712708A82000470E2F /* watchOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watchOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2A1E628A2708A8AB00470E2F /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		2A9B3D2927076ACC001C56EC /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		56E5E92227075FDE000D28FC /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,8 +185,6 @@
 				56E5E92327075FDE000D28FC /* iOS */,
 				2A1E62402708A81700470E2F /* watchOS WatchKit App */,
 				2A1E624B2708A81D00470E2F /* watchOS WatchKit Extension */,
-				2A1E62642708A82000470E2F /* watchOSTests */,
-				2A1E626E2708A82000470E2F /* watchOSUITests */,
 				0E82BBC82705C63A00BD6434 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -278,29 +270,12 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2A1E62642708A82000470E2F /* watchOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				2A1E62652708A82000470E2F /* watchOSTests.swift */,
-			);
-			path = watchOSTests;
-			sourceTree = "<group>";
-		};
-		2A1E626E2708A82000470E2F /* watchOSUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2A1E626F2708A82000470E2F /* watchOSUITests.swift */,
-				2A1E62712708A82000470E2F /* watchOSUITestsLaunchTests.swift */,
-			);
-			path = watchOSUITests;
-			sourceTree = "<group>";
-		};
 		2A1E62892708A86300470E2F /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				2A1E624E2708A81D00470E2F /* ContentView.swift */,
-				2A1E62522708A81D00470E2F /* NotificationView.swift */,
 				2A1E628A2708A8AB00470E2F /* HistoryView.swift */,
+				2A1E62522708A81D00470E2F /* NotificationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -602,7 +577,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A1E62662708A82000470E2F /* watchOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,8 +584,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A1E62722708A82000470E2F /* watchOSUITestsLaunchTests.swift in Sources */,
-				2A1E62702708A82000470E2F /* watchOSUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
