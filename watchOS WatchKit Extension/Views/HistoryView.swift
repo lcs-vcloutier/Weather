@@ -16,7 +16,7 @@ struct HistoryView: View {
         // Show the list of questions and responses
         List(advisor.predictions.reversed()) { prediction in
             // Show forecasted temperature to user
-            Text ("\(String(format: "%.1f", arguments: [currentPrediction.temperature])) °C")
+            Text ("\(String(format: "%.1f", arguments: [prediction.temperature])) °C")
                 .font(.title)
         }
         .navigationTitle("History")
