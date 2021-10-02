@@ -18,6 +18,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             
+            if advisor.predictions.isEmpty == false {
             // Show forecast to user
             GroupBox(
                 label: Label("\(String(format: "%.1f", arguments: [currentPrediction.temperature])) °C", systemImage: "\(currentPrediction.condition.imageName)")
@@ -27,6 +28,7 @@ struct ContentView: View {
                     .font(.title)
             }
             .padding()
+            }
             
             
             // Allow user to request new forecast
