@@ -18,21 +18,34 @@ struct ContentView: View {
     @State var feel: String
     
     @State var condition: WeatherCondition
-
+    
     
     var body: some View {
         VStack {
             
-
-                // Show forecast to user
-                GroupBox(
-                    label: Label("\(String(format: "%.1f", arguments: [temperature])) °C", systemImage: "\(condition.imageName)")
-                        .foregroundColor(.blue)
-                ) {
-                    Text("Current conditions are \(condition.description.lowercased()). That's \(feel.lowercased())")
-                        .font(.title)
+            // Show forecast to user
+            // Use GroupBox for iOS
+#if os(iOS)
+            GroupBox(
+                label: Label("\(String(format: "%.1f", arguments: [temperature])) °C", systemImage: "\(condition.imageName)")
+                    .foregroundColor(.blue)
+            ) {
+                Text("Current conditions are \(condition.description.lowercased()). That's \(feel.lowercased()).")
+                    .font(.title)
+            }
+            .padding()
+            // Use text for watchOS
+#else
+            VStack {
+                HStack {
+                    Text("\(String(format: "%.1f", arguments: [temperature])) °C")
+                    Image(systemName: "\(condition.imageName)")
+                    
                 }
-                .padding()
+                Text("That's \(feel.lowercased()).")
+            }
+
+#endif
             
             
             // Allow user to request new forecast
@@ -44,17 +57,20 @@ struct ContentView: View {
                 
                 // Populate state variables so the user interface updates
                 temperature = prediction.temperature
-                feel = "That's \(prediction.feel.lowercased())."
+                feel = "\(prediction.feel.lowercased())"
                 condition = prediction.condition
                 
             }, label: {
                 Text("New Forecast")
                     .padding()
                     .foregroundColor(.blue)
+#if os(iOS)
                     .font(.title)
                     .background(.regularMaterial)
+#endif
                     .cornerRadius(10)
             })
+            
                 .padding()
             Spacer()
         }

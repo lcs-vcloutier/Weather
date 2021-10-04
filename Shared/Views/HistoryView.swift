@@ -13,6 +13,9 @@ struct HistoryView: View {
     var body: some View {
         // Show the list of questions and responses
         List(advisor.predictions.reversed()) { prediction in
+            
+#if os(iOS)
+
             GroupBox(
                 label: Label("\(String(format: "%.1f", arguments: [prediction.temperature])) °C", systemImage: "\(prediction.condition.imageName)")
                     .foregroundColor(.blue)
@@ -20,9 +23,20 @@ struct HistoryView: View {
                 Text("Current conditions are \(prediction.condition.description.lowercased()). That's \(prediction.feel.lowercased())!")
                     .font(.title)
             }
-            .padding()
+            // Use text for watchOS
+#else
+            VStack {
+                HStack {
+                    Text("\(String(format: "%.1f", arguments: [prediction.temperature])) °C")
+                    Image(systemName: "\(prediction.condition.imageName)")
+                    
+                }
+                Text("That's \(prediction.feel.lowercased()).")
+            }
+#endif
         }
         .padding()
         .navigationTitle("History")
     }
 }
+

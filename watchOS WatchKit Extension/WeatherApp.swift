@@ -13,11 +13,11 @@ struct WeatherApp: App {
     // Source of truth
     @StateObject private var advisor = WeatherViewModel()
     
-    @SceneBuilder var body: some Scene {
+    var body: some Scene {
         WindowGroup {
             TabView {
                 NavigationView {
-                    ContentView(advisor: advisor)
+                    ContentView(advisor: advisor, temperature: advisor.predictions.last!.temperature, feel: advisor.predictions.last!.feel, condition: advisor.predictions.last!.condition)
                 }
                 .tabItem {
                     Image(systemName: "thermometer")
@@ -34,6 +34,5 @@ struct WeatherApp: App {
                 }
             }
         }
-        WKNotificationScene(controller: NotificationController.self, category: "myCategory")
     }
 }
