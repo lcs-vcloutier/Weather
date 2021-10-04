@@ -23,8 +23,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             
-            // Check if history of predictions is empty - in case onAppear fails
-            if advisor.predictions.isEmpty == false {
+
                 // Show forecast to user
                 GroupBox(
                     label: Label("\(String(format: "%.1f", arguments: [temperature])) °C", systemImage: "\(condition.imageName)")
@@ -34,7 +33,6 @@ struct ContentView: View {
                         .font(.title)
                 }
                 .padding()
-            }
             
             
             // Allow user to request new forecast
