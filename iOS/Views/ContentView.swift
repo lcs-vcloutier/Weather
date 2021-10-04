@@ -13,7 +13,12 @@ struct ContentView: View {
     @ObservedObject var advisor: WeatherViewModel
     
     // Create some dummy data to change below (on appear + button) - not very elegant
-    @State var currentPrediction = Prediction(temperature: 0.0, feel: "", condition:  WeatherCondition(description: "Sunny/Clear", imageName: "sun.max.fill"))
+    @State var temperature: Double
+    
+    @State var feel: String
+    
+    @State var condition: WeatherCondition
+
     
     var body: some View {
         VStack {
@@ -22,10 +27,10 @@ struct ContentView: View {
             if advisor.predictions.isEmpty == false {
                 // Show forecast to user
                 GroupBox(
-                    label: Label("\(String(format: "%.1f", arguments: [currentPrediction.temperature])) °C", systemImage: "\(currentPrediction.condition.imageName)")
+                    label: Label("\(String(format: "%.1f", arguments: [temperature])) °C", systemImage: "\(condition.imageName)")
                         .foregroundColor(.blue)
                 ) {
-                    Text("Current conditions are \(currentPrediction.condition.description.lowercased()). That's \(currentPrediction.feel.lowercased())!")
+                    Text("Current conditions are \(condition.description.lowercased()). That's \(feel.lowercased())")
                         .font(.title)
                 }
                 .padding()
@@ -36,11 +41,13 @@ struct ContentView: View {
             
             Button(action: {
                 
-                // Debug
-                print("Button was pressed")
+                // Get a new prediction from the view model
+                let prediction = advisor.provideWeatherPrediction()
                 
-                // Call function from WeatherViewModel to get new prediction
-                currentPrediction = advisor.provideWeatherPrediction()
+                // Populate state variables so the user interface updates
+                temperature = prediction.temperature
+                feel = "That's \(prediction.feel.lowercased())."
+                condition = prediction.condition
                 
             }, label: {
                 Text("New Forecast")
@@ -54,10 +61,6 @@ struct ContentView: View {
             Spacer()
         }
         .navigationTitle("Weather")
-        .onAppear {
-            // Generate new forecast on appear
-            currentPrediction = advisor.provideWeatherPrediction()
-        }
     }
 }
 

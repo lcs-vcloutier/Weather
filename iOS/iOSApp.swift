@@ -17,7 +17,7 @@ struct iOSApp: App {
         WindowGroup {
             TabView {
                 NavigationView {
-                    ContentView(advisor: advisor)
+                    ContentView(advisor: advisor, temperature: advisor.predictions.last!.temperature, feel: advisor.predictions.last!.feel, condition: advisor.predictions.last!.condition)
                 }
                 .tabItem {
                     Image(systemName: "thermometer")

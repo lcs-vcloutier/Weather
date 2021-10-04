@@ -13,6 +13,17 @@ class WeatherViewModel: ObservableObject {
     // Creating an empty array to store history of weather predictions
     @Published var predictions: [Prediction] = []
     
+    
+    init() {
+        // Generate several predictions right away
+        for _ in 1...3 {
+            // Invoke provide prediction method  (part of this class)
+            // To generate and save a prediction
+            _ = self.provideWeatherPrediction()
+        }
+    }
+
+    
     // Get a prediction and save that prediction
     func provideWeatherPrediction() -> Prediction  {
         
